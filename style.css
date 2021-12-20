@@ -36,7 +36,8 @@ body{
   .btn-search{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-around;
+    width: 250px;
   }
 
   .infos-ctn{
@@ -130,4 +131,12 @@ body{
   .fas{
     color: #ffc266;
     font-size: 20px;
+  }
+
+  #searchbar{
+    color: white;
+  }
+
+  .order-by-name-icon{
+    cursor: pointer;
   }

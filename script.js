@@ -230,3 +230,11 @@ function createTrackItem(index,name,duration){
       volUp.style.display = "block"
     }
   }
+
+  function search_song(value){
+    document.querySelector(".playlist-ctn").innerHTML = "";
+    const filteredAudioList = listAudio.filter((audio)=> audio.name.toLowerCase().includes(value.toLowerCase()))
+    for (var i = 0; i < filteredAudioList.length; i++) {
+      createTrackItem(i,filteredAudioList[i].name,filteredAudioList[i].duration);
+  }
+  }
