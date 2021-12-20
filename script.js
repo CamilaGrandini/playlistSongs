@@ -67,7 +67,7 @@ var listAudio = [
 
   },
   {
-    name: "pov - Ariana Grande",
+    name: "Pov - Ariana Grande",
     file: "https://hiphopmore.site/music/uploads/2021/10/Ariana_Grande_-_Positions-HIPHOPMORE.COM.mp3",
     duration: "02:53"
   },
@@ -278,5 +278,22 @@ function search_song(value) {
   const filteredAudioList = listAudio.filter((audio) => audio.name.toLowerCase().includes(value.toLowerCase()))
   for (var i = 0; i < filteredAudioList.length; i++) {
     createTrackItem(i, filteredAudioList[i].name, filteredAudioList[i].duration);
+  }
+}
+
+function orderByName() {
+  document.querySelector(".playlist-ctn").innerHTML = "";
+  const sortedListAudio = listAudio.sort((a, b) => {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    return 0;
+  }
+  )
+  for (var i = 0; i < sortedListAudio.length; i++) {
+    createTrackItem(i, sortedListAudio[i].name, sortedListAudio[i].duration);
   }
 }
